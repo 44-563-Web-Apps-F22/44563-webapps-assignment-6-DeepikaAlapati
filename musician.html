@@ -19,28 +19,35 @@
 <p id="result">Check wheather its right or wrong answer </p>
 
 <script> 
-
     var correct = 0
     var wrong = 0
-    
+    var incorrect_values = 0
     function checkGuess(){
         console.log("Getting form values")
-        name = document.getElementById("MusicianName").value
-        guess = document.getElementById("guessName").value
+        musician_name = document.getElementById("musician_name").value
+        musician_guess = document.getElementById("guess_musician").value
+
+        out = document.getElementById("result")
         
-        if(name === guess){
-            correct = correct + 1
-            alert("You got it right")
-            
-        } else {
-            wrong = wrong + 1 
-            alert("Wrong Musician")
-    
+        if(incorrect_values >= 3) {
+            alert("Sorry, game Over");
         }
-        document.getElementById("result").innerHTML = "wrong guess :" + wrong + "\n correct guess :" + correct
+        else if(musician_name == musician_guess){
+            correct = correct + 1
+            incorrect_values = 0
+            alert("You got it right")
+            out.innerHTML =  "Correct Guess: " + correct + " Wrong Guess: " + wrong
+        } else {
+            wrong = wrong + 1
+            incorrect_values += 1
+            alert("Wrong Musician")
+            out.innerHTML = result.innerHTML = "Correct Guess: " + correct + " Wrong Guess: " + wrong
+      
+        }
     }
-   
+
     </script>
+
 
 <div class="container">
     <img src="ant.jpg" class="img-fluid" onclick="swapImage()" id="Image" width="100px" height="100px " alt="insect" >
@@ -65,6 +72,8 @@
             }
         }
     </script>
+
+
 
 
 </body>
