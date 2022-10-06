@@ -39,38 +39,33 @@
         }
         document.getElementById("result").innerHTML = "wrong guess :" + wrong + "\n correct guess :" + correct
     }
+   
+    </script>
 
-    function swapImage() {
-            switch (useImage) {
-                case 1: useImage = useImage + 1
-                    image.src = "ant.jpg";
-                    break;
-                case 2: useImage = useImage + 1
-                    image.src = "paperwasp.jpg";
-                    break;
-                case 3: useImage = useImage + 1
-                    image.src = "thysanura.png";
-                    break;
+<div class="container">
+    <img src="ant.jpg" class="img-fluid" onclick="swapImage()" id="Image" width="100px" height="100px " alt="insect" >
+    <p id="result">Replacing this image</p>
+    </div>
+    <script>
+        var useImage= 1
+        function swapImage(){
+            switch(useImage){
+                case 1: 
+                document.getElementById("Image").src="ant.jpg";
+                useImage =  2;
+                break;
+                case 2:
+                document.getElementById("Image").src="paperwasp.jpg";
+                useImage=3;
+                break;
+                case 3:
+                document.getElementById("Image").src="thysanura.png";
+                useImage=1;
+                break;
             }
         }
     </script>
 
-<div class="wrapper">
-    <div class="circles">
-    <img src="C:\Users\s550002\Desktop\webapps-repos\44563-webapps-assignment-6-DeepikaAlapati\ant.jpg" alt="ANT" width="100" height="100" 
-    class="alignnone size-medium wp-image-358" />
-    </div>
-
-    <div class="circles">
-    <img src="C:\Users\s550002\Desktop\webapps-repos\44563-webapps-assignment-6-DeepikaAlapati\paperwasp.jpg" alt="PAPERWASP" width="100" height="100" 
-    class="alignnone size-medium wp-image-363" />
-    </div>
-
-    <div class="circles">
-        <img src="C:\Users\s550002\Desktop\webapps-repos\44563-webapps-assignment-6-DeepikaAlapati\thysanura.png" alt="THYSANURA" width="100" height="100" 
-        class="alignnone size-medium wp-image-363" />
-        </div>
-</div>
 
 </body>
 </html> 
